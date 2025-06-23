@@ -1,0 +1,167 @@
+.details {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    color: var(--text-color);
+}
+
+.backLink {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.backLink:hover {
+    text-decoration: underline;
+}
+
+.title {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+
+.location {
+    margin: 0 0 1.5rem 0;
+    color: var(--secondary-text);
+    font-size: 1.1rem;
+}
+
+.gallery {
+    position: relative;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mainImage {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.navButton:first-of-type {
+    left: 1rem;
+}
+
+.navButton:last-of-type {
+    right: 1rem;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    overflow-x: auto;
+    background-color: var(--card-bg);
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.thumbnail:hover, .thumbnail.active {
+    opacity: 1;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--secondary-text);
+    transition: all 0.2s;
+}
+
+.tab:hover {
+    color: var(--text-color);
+}
+
+.tab.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+    font-weight: 600;
+}
+
+.tabContent {
+    margin-bottom: 2rem;
+}
+
+.rating {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: gold;
+}
+
+.priceTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.priceTable th, .priceTable td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.priceTable th {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.contactInfo p {
+    margin: 0.5rem 0;
+}
+
+.notFound {
+    text-align: center;
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .mainImage {
+        max-height: 300px;
+    }
+}

@@ -1,0 +1,21 @@
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--secondary-text);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+    .list {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+    }
+}
