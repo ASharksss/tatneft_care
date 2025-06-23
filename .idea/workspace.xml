@@ -4,36 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac52e1cc-6a06-4dc9-9260-791dec0f3a97" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ObjectCard/ObjectCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ObjectCard/ObjectCard.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ObjectDetails/ObjectDetails.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ObjectDetails/ObjectDetails.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ObjectList/ObjectList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ObjectList/ObjectList.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ThemeToggle/ThemeToggle.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ThemeToggle/ThemeToggle.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TypeSelector/TypeSelector.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TypeSelector/TypeSelector.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useTheme.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ObjectPage/ObjectPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ObjectPage/ObjectPage.module.css" afterDir="false" />
+    <list default="true" id="ac52e1cc-6a06-4dc9-9260-791dec0f3a97" name="Changes" comment="prototype">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,11 +66,35 @@
       <option name="presentableId" value="Default" />
       <updated>1750668123352</updated>
       <workItem from="1750668124702" duration="43000" />
-      <workItem from="1750670636503" duration="997000" />
+      <workItem from="1750670636503" duration="1597000" />
     </task>
+    <task id="LOCAL-00001" summary="prototype">
+      <option name="closed" value="true" />
+      <created>1750671930087</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1750671930087</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="prototype" />
+    <option name="LAST_COMMIT_MESSAGE" value="prototype" />
   </component>
 </project>
