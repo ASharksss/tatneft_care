@@ -8,7 +8,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
-          Социальные объекты города
+          Гайд по объектам ТН-Забота
         </Link>
         <ThemeToggle />
       </div>

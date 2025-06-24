@@ -165,3 +165,96 @@
         max-height: 300px;
     }
 }
+
+/* Стили для блока карты */
+.mapSection {
+    margin-bottom: 2rem;
+}
+
+.mapContainer {
+    margin-top: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для блока номеров */
+.roomsSection {
+    margin-bottom: 2rem;
+}
+
+.roomsList {
+    display: grid;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.roomCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.roomGallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem;
+}
+
+.roomImage {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.roomImage:hover {
+    transform: scale(1.03);
+}
+
+.roomInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.roomDescription {
+    color: var(--secondary-text);
+}
+
+.roomPrice {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.amenities ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.amenities li {
+    padding: 0.3rem 0.5rem;
+    background-color: var(--hover-bg);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .roomCard {
+        grid-template-columns: 1fr;
+    }
+
+    .roomGallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -3,6 +3,8 @@ import Header from '../../components/Header/Header';
 import TypeSelector from '../../components/TypeSelector/TypeSelector';
 import ObjectList from '../../components/ObjectList/ObjectList';
 import styles from './HomePage.module.css';
+import resort1 from '../../assets/images/objects/resort1.jpg';
+import resort2 from '../../assets/images/objects/img.png';
 
 // Mock данные - в реальном приложении будут приходить с API
 const mockObjects = {
@@ -29,12 +31,13 @@ const mockObjects = {
   resorts: [
     {
       id: 'resort1',
-      name: 'База отдыха "Лесная гавань"',
+      name: 'База отдыха "Новая Земля"',
       type: 'resorts',
-      location: 'Озеро Светлое',
+      location: 'Республика Татарстан (Татарстан), Бугульминский район, муниципальное ' +
+        'образование Карабаш, посёлок городского типа Карабаш',
       rating: 4.8,
       price: 2500,
-      image: '/resort1.jpg'
+      image: resort1,
     },
     {
       id: 'resort2',
@@ -43,7 +46,7 @@ const mockObjects = {
       location: 'Сосновый бор',
       rating: 4.3,
       price: 1800,
-      image: '/resort2.jpg'
+      image: resort2
     }
   ],
   sanatoriums: [
