@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import ObjectPage from './pages/ObjectPage/ObjectPage';
 import { ThemeProvider } from './hooks/useTheme';
