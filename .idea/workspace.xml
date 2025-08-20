@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac52e1cc-6a06-4dc9-9260-791dec0f3a97" name="Changes" comment="fix container">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TypeSelector/TypeSelector.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TypeSelector/TypeSelector.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TypeSelector/TypeSelector.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TypeSelector/TypeSelector.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.module.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="JSX File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ASharksss&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ASharksss/tatneft_care.git&quot;,
+    &quot;accountId&quot;: &quot;afc2d072-fbd1-49db-b2b0-10bcdfde71b5&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2ytyNNMGO6p5pbT1IZ1mPU0az7j" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/BusyaProjects/tatneft_care/src/assets/images&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\BusyaProjects\tatneft_care\src\assets\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\BusyaProjects\tatneft_care\src\assets\images\objects" />
+      <recent name="C:\Users\admin\Desktop\tatneft_care\src\assets" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac52e1cc-6a06-4dc9-9260-791dec0f3a97" name="Changes" comment="" />
+      <created>1750668123352</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750668123352</updated>
+      <workItem from="1750668124702" duration="43000" />
+      <workItem from="1750670636503" duration="1597000" />
+      <workItem from="1750672311158" duration="7875000" />
+      <workItem from="1750704222868" duration="932000" />
+      <workItem from="1750751487776" duration="57000" />
+      <workItem from="1750751601128" duration="539000" />
+      <workItem from="1750752665826" duration="33000" />
+      <workItem from="1750762210993" duration="472000" />
+      <workItem from="1750762699495" duration="720000" />
+      <workItem from="1752485642259" duration="724000" />
+      <workItem from="1755693567197" duration="7026000" />
+    </task>
+    <task id="LOCAL-00001" summary="prototype">
+      <option name="closed" value="true" />
+      <created>1750671930087</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1750671930087</updated>
+    </task>
+    <task id="LOCAL-00002" summary="prototype">
+      <option name="closed" value="true" />
+      <created>1750672536223</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1750672536223</updated>
+    </task>
+    <task id="LOCAL-00003" summary="finished">
+      <option name="closed" value="true" />
+      <created>1750763295432</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1750763295432</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix container">
+      <option name="closed" value="true" />
+      <created>1755695983056</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1755695983056</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="prototype" />
+    <MESSAGE value="finished" />
+    <MESSAGE value="fix container" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix container" />
+  </component>
+</project>
