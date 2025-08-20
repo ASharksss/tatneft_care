@@ -4,29 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac52e1cc-6a06-4dc9-9260-791dec0f3a97" name="Changes" comment="prototype">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/objects/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/objects/resort1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/objects/resort2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/rooms/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/rooms/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/rooms/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/rooms/img_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/rooms/img_4.png" afterDir="false" />
+    <list default="true" id="ac52e1cc-6a06-4dc9-9260-791dec0f3a97" name="Changes" comment="finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ObjectDetails/ObjectDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ObjectDetails/ObjectDetails.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ObjectDetails/ObjectDetails.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ObjectDetails/ObjectDetails.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +114,9 @@
       <workItem from="1750751601128" duration="539000" />
       <workItem from="1750752665826" duration="33000" />
       <workItem from="1750762210993" duration="472000" />
+      <workItem from="1750762699495" duration="720000" />
+      <workItem from="1752485642259" duration="724000" />
+      <workItem from="1755693567197" duration="2208000" />
     </task>
     <task id="LOCAL-00001" summary="prototype">
       <option name="closed" value="true" />
@@ -147,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750672536223</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finished">
+      <option name="closed" value="true" />
+      <created>1750763295432</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1750763295432</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +161,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="prototype" />
+    <MESSAGE value="finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished" />
   </component>
 </project>

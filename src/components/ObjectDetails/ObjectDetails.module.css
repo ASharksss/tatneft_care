@@ -1,7 +1,6 @@
 .details {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
     color: var(--text-color);
 }
 
@@ -88,35 +87,35 @@
     opacity: 1;
 }
 
-.tabs {
+.section {
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sectionHeader {
     display: flex;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 1.5rem;
-}
-
-.tab {
-    padding: 0.75rem 1.5rem;
-    background: none;
-    border: none;
-    border-bottom: 3px solid transparent;
-    font-size: 1rem;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
-    color: var(--secondary-text);
-    transition: all 0.2s;
 }
 
-.tab:hover {
-    color: var(--text-color);
+.sectionHeader:hover {
+    opacity: 0.8;
 }
 
-.tab.active {
+.sectionTitle {
+    margin: 0;
+    font-size: 1.5rem;
     color: var(--accent-color);
-    border-bottom-color: var(--accent-color);
-    font-weight: 600;
 }
 
-.tabContent {
-    margin-bottom: 2rem;
+.toggleIcon {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
 }
 
 .rating {
@@ -146,31 +145,7 @@
     margin: 0.5rem 0;
 }
 
-.notFound {
-    text-align: center;
-    padding: 2rem;
-}
-
-@media (max-width: 768px) {
-    .title {
-        font-size: 1.5rem;
-    }
-
-    .tabs {
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    .mainImage {
-        max-height: 300px;
-    }
-}
-
 /* Стили для блока карты */
-.mapSection {
-    margin-bottom: 2rem;
-}
-
 .mapContainer {
     margin-top: 1.5rem;
     border-radius: 12px;
@@ -179,10 +154,6 @@
 }
 
 /* Стили для блока номеров */
-.roomsSection {
-    margin-bottom: 2rem;
-}
-
 .roomsList {
     display: grid;
     gap: 2rem;
@@ -194,10 +165,7 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 1.5rem;
-    background-color: var(--card-bg);
     border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .roomGallery {
@@ -250,6 +218,14 @@
 }
 
 @media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .mainImage {
+        max-height: 300px;
+    }
+
     .roomCard {
         grid-template-columns: 1fr;
     }
@@ -257,4 +233,26 @@
     .roomGallery {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.3rem;
+    }
+
+}
+
+.roomDivider {
+    height: 2px;
+    background: linear-gradient(
+            90deg,
+            transparent 0%,
+            var(--accent-color) 50%,
+            transparent 100%
+    );
+    margin: 2rem 0;
+    opacity: 0.3;
 }

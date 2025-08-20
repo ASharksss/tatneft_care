@@ -8,6 +8,7 @@ import room_2 from '../../assets/images/rooms/img_1.png';
 import room_3 from '../../assets/images/rooms/img_2.png';
 import room_4 from '../../assets/images/rooms/img_3.png';
 import room_5 from '../../assets/images/rooms/img_4.png';
+import {MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowRight} from "react-icons/md";
 
 // Mock данные - в реальном приложении будут приходить с API
 const mockObjects = {
@@ -45,7 +46,9 @@ const mockObjects = {
       price: 1000
     },],
     contacts: {
-      phone: '+7 (987) 654-32-10', email: 'newLand@,mail.ru', address: 'Республика Татарстан (Татарстан), Бугульминский район, муниципальное ' +
+      phone: '+7 (987) 654-32-10',
+      email: 'newLand@,mail.ru',
+      address: 'Республика Татарстан (Татарстан), Бугульминский район, муниципальное ' +
         'образование Карабаш, посёлок городского типа Карабаш"'
     },
     mapEmbedUrl: 'https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c...',
@@ -105,6 +108,22 @@ const ObjectDetails = () => {
   const [activeTab, setActiveTab] = useState('about');
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
+  const [expandedSections, setExpandedSections] = useState({
+    about: true,
+    services: true,
+    rooms: true,
+    map: true,
+    contacts: true
+  });
+
+  const toggleSection = (section) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
+
   // Находим объект по ID (в реальном приложении - запрос к API)
   let object = null;
   for (const type in mockObjects) {
@@ -117,9 +136,9 @@ const ObjectDetails = () => {
 
   if (!object) {
     return (<div className={styles.notFound}>
-        <h2>Объект не найден</h2>
-        <Link to="/" className={styles.backLink}>Вернуться на главную</Link>
-      </div>);
+      <h2>Объект не найден</h2>
+      <Link to="/" className={styles.backLink}>Вернуться на главную</Link>
+    </div>);
   }
 
   const nextPhoto = () => {
@@ -130,7 +149,8 @@ const ObjectDetails = () => {
     setCurrentPhotoIndex((prev) => prev === 0 ? object.photos.length - 1 : prev - 1);
   };
 
-  return (<div className={styles.details}>
+  return (
+    <div className={styles.details}>
       <Link to="/" className={styles.backLink}>← Назад к списку</Link>
 
       <h1 className={styles.title}>{object.name}</h1>
@@ -146,79 +166,116 @@ const ObjectDetails = () => {
         <button className={styles.navButton} onClick={nextPhoto}>❯</button>
         <div className={styles.thumbnails}>
           {object.photos.map((photo, index) => (<img
-              key={index}
-              src={photo}
-              alt={`${object.name} ${index + 1}`}
-              className={`${styles.thumbnail} ${index === currentPhotoIndex ? styles.active : ''}`}
-              onClick={() => setCurrentPhotoIndex(index)}
-            />))}
+            key={index}
+            src={photo}
+            alt={`${object.name} ${index + 1}`}
+            className={`${styles.thumbnail} ${index === currentPhotoIndex ? styles.active : ''}`}
+            onClick={() => setCurrentPhotoIndex(index)}
+          />))}
         </div>
       </div>
 
-      <div className={styles.tabs}>
-        <button
-          className={`${styles.tab} ${activeTab === 'about' ? styles.active : ''}`}
-          onClick={() => setActiveTab('about')}
-        >
-          О объекте
-        </button>
-        <button
-          className={`${styles.tab} ${activeTab === 'services' ? styles.active : ''}`}
-          onClick={() => setActiveTab('services')}
-        >
-          Услуги и цены
-        </button>
-        <button
-          className={`${styles.tab} ${activeTab === 'rooms' ? styles.active : ''}`}
-          onClick={() => setActiveTab('rooms')}
-        >
-          Комнаты
-        </button>
-        <button
-          className={`${styles.tab} ${activeTab === 'map' ? styles.active : ''}`}
-          onClick={() => setActiveTab('map')}
-        >
-          Карта и как добраться
-        </button>
-        <button
-          className={`${styles.tab} ${activeTab === 'contacts' ? styles.active : ''}`}
-          onClick={() => setActiveTab('contacts')}
-        >
-          Контакты
-        </button>
-      </div>
+      {/* Секция "Об объекте" */}
+      <section className={styles.section}>
+        <div className={styles.sectionHeader} onClick={() => toggleSection('about')}>
+          <h2 className={styles.sectionTitle}>Об объекте</h2>
 
-      <div className={styles.tabContent}>
-        {activeTab === 'about' && (<div>
-            <h3>Описание</h3>
+            {expandedSections.about ? <MdOutlineKeyboardArrowDown  size={25} className={styles.toggleIcon}/> : <MdOutlineKeyboardArrowRight size={25}/>}
+
+        </div>
+        {expandedSections.about && (
+          <>
             <p>{object.description}</p>
             <div className={styles.rating}>
               Рейтинг: {'⭐'.repeat(Math.round(object.rating))} ({object.rating.toFixed(1)})
             </div>
-          </div>)}
+          </>
+        )}
+      </section>
 
-        {activeTab === 'services' && (<div>
-            <h3>Услуги и цены</h3>
-            <table className={styles.priceTable}>
-              <thead>
-              <tr>
-                <th>Услуга</th>
-                <th>Цена</th>
-              </tr>
-              </thead>
-              <tbody>
-              {object.services.map((service, index) => (<tr key={index}>
-                  <td>{service.name}</td>
-                  <td>{service.price} ₽</td>
-                </tr>))}
-              </tbody>
-            </table>
-          </div>)}
+      {/* Секция "Услуги и цены" */}
+      <section className={styles.section}>
+        <div className={styles.sectionHeader} onClick={() => toggleSection('services')}>
+          <h2 className={styles.sectionTitle}>Услуги и цены</h2>
+            {expandedSections.services ? <MdOutlineKeyboardArrowDown  size={25} className={styles.toggleIcon}/> : <MdOutlineKeyboardArrowRight size={25}/>}
+        </div>
+        {expandedSections.services && (
+          <table className={styles.priceTable}>
+            <thead>
+            <tr>
+              <th>Услуга</th>
+              <th>Цена</th>
+            </tr>
+            </thead>
+            <tbody>
+            {object.services.map((service, index) => (<tr key={index}>
+              <td>{service.name}</td>
+              <td>{service.price} ₽</td>
+            </tr>))}
+            </tbody>
+          </table>
+        )}
+      </section>
 
-        {activeTab === 'map' && (<div className={styles.mapSection}>
-            <h3>Как добраться</h3>
+      {/* Секция "Комнаты" */}
+      {object.rooms && (
+        <section className={styles.section}>
+          <div className={styles.sectionHeader} onClick={() => toggleSection('rooms')}>
+            <h2 className={styles.sectionTitle}>Номера и размещение</h2>
+              {expandedSections.rooms ? <MdOutlineKeyboardArrowDown  size={25} className={styles.toggleIcon}/> : <MdOutlineKeyboardArrowRight size={25}/>}
+          </div>
+
+          {expandedSections.rooms && (
+            <div className={styles.roomsList}>
+              {object.rooms.map((room, index) => (
+                <React.Fragment key={room.id}>
+                  <div className={styles.roomCard}>
+                    <div className={styles.roomGallery}>
+                      {room.images.map((img, idx) => (
+                        <img
+                          key={idx}
+                          src={img}
+                          alt={`${room.name} фото ${idx + 1}`}
+                          className={styles.roomImage}
+                        />
+                      ))}
+                    </div>
+                    <div className={styles.roomInfo}>
+                      <h4>{room.name}</h4>
+                      <p className={styles.roomDescription}>{room.description}</p>
+                      <p className={styles.roomPrice}>{room.price} ₽/ночь</p>
+                      <p>Вместимость: до {room.capacity} человек</p>
+                      <div className={styles.amenities}>
+                        <h5>Удобства:</h5>
+                        <ul>
+                          {room.amenities.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Добавляем разделитель между комнатами, кроме последней */}
+                  {index < object.rooms.length - 1 && (
+                    <div className={styles.roomDivider}></div>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          )}
+
+        </section>
+      )}
+
+      {/* Секция "Карта" */}
+      <section className={styles.section}>
+        <div className={styles.sectionHeader} onClick={() => toggleSection('map')}>
+          <h2 className={styles.sectionTitle}>Как добраться</h2>
+            {expandedSections.map ? <MdOutlineKeyboardArrowDown  size={25} className={styles.toggleIcon}/> : <MdOutlineKeyboardArrowRight size={25}/>}
+        </div>
+        {expandedSections.map && (
+          <>
             <p>{object.howToGet}</p>
-
             <div className={styles.mapContainer}>
               <iframe
                 src={object.mapEmbedUrl}
@@ -230,46 +287,26 @@ const ObjectDetails = () => {
                 title={`Карта ${object.name}`}
               ></iframe>
             </div>
-          </div>)}
+          </>
+        )}
+      </section>
 
-        {activeTab === 'rooms' && object.rooms && (<div className={styles.roomsSection}>
-            <h3>Номера и размещение</h3>
-            <div className={styles.roomsList}>
-              {object.rooms.map(room => (<div key={room.id} className={styles.roomCard}>
-                  <div className={styles.roomGallery}>
-                    {room.images.map((img, idx) => (<img
-                        key={idx}
-                        src={img}
-                        alt={`${room.name} фото ${idx + 1}`}
-                        className={styles.roomImage}
-                      />))}
-                  </div>
-                  <div className={styles.roomInfo}>
-                    <h4>{room.name}</h4>
-                    <p className={styles.roomDescription}>{room.description}</p>
-                    <p className={styles.roomPrice}>{room.price} ₽/ночь</p>
-                    <p>Вместимость: до {room.capacity} человек</p>
-                    <div className={styles.amenities}>
-                      <h5>Удобства:</h5>
-                      <ul>
-                        {room.amenities.map((item, i) => (<li key={i}>{item}</li>))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>))}
-            </div>
-          </div>)}
-
-        {activeTab === 'contacts' && (<div>
-            <h3>Контакты</h3>
-            <div className={styles.contactInfo}>
-              <p><strong>Телефон:</strong> {object.contacts.phone}</p>
-              <p><strong>Email:</strong> {object.contacts.email}</p>
-              <p><strong>Адрес:</strong> {object.contacts.address}</p>
-            </div>
-          </div>)}
-      </div>
-    </div>);
+      {/* Секция "Контакты" */}
+      <section className={styles.section}>
+        <div className={styles.sectionHeader} onClick={() => toggleSection('contacts')}>
+          <h2 className={styles.sectionTitle}>Контакты</h2>
+            {expandedSections.contacts ? <MdOutlineKeyboardArrowDown  size={25} className={styles.toggleIcon}/> : <MdOutlineKeyboardArrowRight size={25}/>}
+        </div>
+        {expandedSections.contacts && (
+          <div className={styles.contactInfo}>
+            <p><strong>Телефон:</strong> {object.contacts.phone}</p>
+            <p><strong>Email:</strong> {object.contacts.email}</p>
+            <p><strong>Адрес:</strong> {object.contacts.address}</p>
+          </div>
+        )}
+      </section>
+    </div>
+  )
 };
 
 export default ObjectDetails;
