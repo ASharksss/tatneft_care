@@ -12,6 +12,7 @@ function App() {
         <div className="app">
           <Routes>
             <Route path="/" index element={<HomePage />} />
+            <Route path="/tatneft_care" index element={<HomePage />} />
             <Route path="/object/:id" element={<ObjectPage />} />
           </Routes>
         </div>

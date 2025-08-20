@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link to="/" className={styles.logo}>
+        <Link to="/tatneft_care" className={styles.logo}>
           Гайд по объектам ТН-Забота
         </Link>
         <ThemeToggle />

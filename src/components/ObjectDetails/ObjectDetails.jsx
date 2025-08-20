@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useParams, Link} from 'react-router-dom';
+import Fancybox from "../../shared/fancybox";
 import styles from './ObjectDetails.module.css';
 import resort1 from '../../assets/images/objects/resort1.jpg';
 import resort2 from '../../assets/images/objects/resort2.png';
@@ -105,7 +106,6 @@ const mockObjects = {
 
 const ObjectDetails = () => {
   const {id} = useParams();
-  const [activeTab, setActiveTab] = useState('about');
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
   const [expandedSections, setExpandedSections] = useState({
@@ -151,27 +151,43 @@ const ObjectDetails = () => {
 
   return (
     <div className={styles.details}>
-      <Link to="/" className={styles.backLink}>← Назад к списку</Link>
+      <Link to="/tatneft_care" className={styles.backLink}>← Назад к списку</Link>
 
       <h1 className={styles.title}>{object.name}</h1>
       <p className={styles.location}>{object.location}</p>
 
       <div className={styles.gallery}>
         <button className={styles.navButton} onClick={prevPhoto}>❮</button>
-        <img
-          src={object.photos[currentPhotoIndex]}
-          alt={object.name}
-          className={styles.mainImage}
-        />
+        <Fancybox
+          options={{
+            Carousel: {
+              infinite: true,
+            },
+          }}>
+          <img data-fancybox="gallery"
+               src={object.photos[currentPhotoIndex]}
+               alt={object.name}
+               className={styles.mainImage}
+          />
+          {object.photos.map((photo, index) => index !== currentPhotoIndex && (
+            <img data-fancybox="gallery"
+                 key={index}
+                 src={photo}
+                 alt={`${object.name} ${index + 1}`}
+                 hidden
+            />
+          ))}
+        </Fancybox>
         <button className={styles.navButton} onClick={nextPhoto}>❯</button>
         <div className={styles.thumbnails}>
-          {object.photos.map((photo, index) => (<img
-            key={index}
-            src={photo}
-            alt={`${object.name} ${index + 1}`}
-            className={`${styles.thumbnail} ${index === currentPhotoIndex ? styles.active : ''}`}
-            onClick={() => setCurrentPhotoIndex(index)}
-          />))}
+          {object.photos.map((photo, index) => (
+            <img key={index}
+                 src={photo}
+                 alt={`${object.name} ${index + 1}`}
+                 className={`${styles.thumbnail} ${index === currentPhotoIndex ? styles.active : ''}`}
+                 onClick={() => setCurrentPhotoIndex(index)}
+            />
+          ))}
         </div>
       </div>
 
@@ -180,7 +196,8 @@ const ObjectDetails = () => {
         <div className={styles.sectionHeader} onClick={() => toggleSection('about')}>
           <h2 className={styles.sectionTitle}>Об объекте</h2>
 
-            {expandedSections.about ? <MdOutlineKeyboardArrowDown  size={25} className={styles.toggleIcon}/> : <MdOutlineKeyboardArrowRight size={25}/>}
+          {expandedSections.about ? <MdOutlineKeyboardArrowDown size={25} className={styles.toggleIcon}/> :
+            <MdOutlineKeyboardArrowRight size={25}/>}
 
         </div>
         {expandedSections.about && (
@@ -197,7 +214,8 @@ const ObjectDetails = () => {
       <section className={styles.section}>
         <div className={styles.sectionHeader} onClick={() => toggleSection('services')}>
           <h2 className={styles.sectionTitle}>Услуги и цены</h2>
-            {expandedSections.services ? <MdOutlineKeyboardArrowDown  size={25} className={styles.toggleIcon}/> : <MdOutlineKeyboardArrowRight size={25}/>}
+          {expandedSections.services ? <MdOutlineKeyboardArrowDown size={25} className={styles.toggleIcon}/> :
+            <MdOutlineKeyboardArrowRight size={25}/>}
         </div>
         {expandedSections.services && (
           <table className={styles.priceTable}>
@@ -222,7 +240,8 @@ const ObjectDetails = () => {
         <section className={styles.section}>
           <div className={styles.sectionHeader} onClick={() => toggleSection('rooms')}>
             <h2 className={styles.sectionTitle}>Номера и размещение</h2>
-              {expandedSections.rooms ? <MdOutlineKeyboardArrowDown  size={25} className={styles.toggleIcon}/> : <MdOutlineKeyboardArrowRight size={25}/>}
+            {expandedSections.rooms ? <MdOutlineKeyboardArrowDown size={25} className={styles.toggleIcon}/> :
+              <MdOutlineKeyboardArrowRight size={25}/>}
           </div>
 
           {expandedSections.rooms && (
@@ -230,16 +249,23 @@ const ObjectDetails = () => {
               {object.rooms.map((room, index) => (
                 <React.Fragment key={room.id}>
                   <div className={styles.roomCard}>
-                    <div className={styles.roomGallery}>
+                    <Fancybox
+                      className={styles.roomGallery}
+                      options={{
+                        Carousel: {
+                          infinite: true,
+                        },
+                      }}>
                       {room.images.map((img, idx) => (
                         <img
+                          data-fancybox="gallery"
                           key={idx}
                           src={img}
                           alt={`${room.name} фото ${idx + 1}`}
                           className={styles.roomImage}
                         />
                       ))}
-                    </div>
+                    </Fancybox>
                     <div className={styles.roomInfo}>
                       <h4>{room.name}</h4>
                       <p className={styles.roomDescription}>{room.description}</p>
@@ -271,7 +297,8 @@ const ObjectDetails = () => {
       <section className={styles.section}>
         <div className={styles.sectionHeader} onClick={() => toggleSection('map')}>
           <h2 className={styles.sectionTitle}>Как добраться</h2>
-            {expandedSections.map ? <MdOutlineKeyboardArrowDown  size={25} className={styles.toggleIcon}/> : <MdOutlineKeyboardArrowRight size={25}/>}
+          {expandedSections.map ? <MdOutlineKeyboardArrowDown size={25} className={styles.toggleIcon}/> :
+            <MdOutlineKeyboardArrowRight size={25}/>}
         </div>
         {expandedSections.map && (
           <>
@@ -295,7 +322,8 @@ const ObjectDetails = () => {
       <section className={styles.section}>
         <div className={styles.sectionHeader} onClick={() => toggleSection('contacts')}>
           <h2 className={styles.sectionTitle}>Контакты</h2>
-            {expandedSections.contacts ? <MdOutlineKeyboardArrowDown  size={25} className={styles.toggleIcon}/> : <MdOutlineKeyboardArrowRight size={25}/>}
+          {expandedSections.contacts ? <MdOutlineKeyboardArrowDown size={25} className={styles.toggleIcon}/> :
+            <MdOutlineKeyboardArrowRight size={25}/>}
         </div>
         {expandedSections.contacts && (
           <div className={styles.contactInfo}>
