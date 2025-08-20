@@ -1,40 +1,52 @@
 /* Базовые стили */
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.3s ease;
+    line-height: 1.6;
 }
 
-/* Светлая тема по умолчанию */
+/* Обновленная светлая тема */
 :root {
-    --bg-color: #f5f5f5;
-    --text-color: #333;
-    --secondary-text: #666;
-    --header-bg: #ffffff;
-    --card-bg: #ffffff;
-    --border-color: #e0e0e0;
-    --accent-color: #4a6fa5;
-    --hover-bg: rgba(0, 0, 0, 0.05);
+    --bg-color: #fafafa;
+    --text-color: #2d3748;
+    --secondary-text: #718096;
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --border-color: #e2e8f0;
+    --accent-color: #4299e1;
+    --accent-hover: #3182ce;
+    --hover-bg: rgba(66, 153, 225, 0.1);
+    --gradient-start: #667eea;
+    --gradient-end: #764ba2;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Темная тема */
+/* Обновленная темная тема */
 [data-theme="dark"] {
     --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --secondary-text: #a0a0a0;
-    --header-bg: #1e1e1e;
-    --card-bg: #1e1e1e;
-    --border-color: #333;
-    --accent-color: #6d9eeb;
-    --hover-bg: rgba(255, 255, 255, 0.05);
+    --text-color: #e2e8f0;
+    --secondary-text: #a0aec0;
+    --header-bg: rgba(30, 30, 30, 0.95);
+    --card-bg: rgba(30, 30, 30, 0.8);
+    --border-color: #2d3748;
+    --accent-color: #63b3ed;
+    --accent-hover: #4299e1;
+    --hover-bg: rgba(99, 179, 237, 0.15);
+    --gradient-start: #805ad5;
+    --gradient-end: #d53f8c;
 }
 
-/* Применяем переменные */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
+}
+
+/* Плавные переходы для интерактивных элементов */
+* {
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
