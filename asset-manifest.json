@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/tatneft_care/static/css/main.55a7e0ba.css",
+    "main.css": "/tatneft_care/static/css/main.24248b7a.css",
     "main.js": "/tatneft_care/static/js/main.5ac0eb32.js",
     "static/media/resort2.png": "/tatneft_care/static/media/resort2.324bfc94b5da462de346.png",
     "static/media/img_2.png": "/tatneft_care/static/media/img_2.864037a8b21324fd4ab2.png",
@@ -10,11 +10,11 @@
     "static/media/resort1.jpg": "/tatneft_care/static/media/resort1.53d97daa32c06c7183ea.jpg",
     "static/media/img_3.png": "/tatneft_care/static/media/img_3.dca570a11474031cbeb5.png",
     "index.html": "/tatneft_care/index.html",
-    "main.55a7e0ba.css.map": "/tatneft_care/static/css/main.55a7e0ba.css.map",
+    "main.24248b7a.css.map": "/tatneft_care/static/css/main.24248b7a.css.map",
     "main.5ac0eb32.js.map": "/tatneft_care/static/js/main.5ac0eb32.js.map"
   },
   "entrypoints": [
-    "static/css/main.55a7e0ba.css",
+    "static/css/main.24248b7a.css",
     "static/js/main.5ac0eb32.js"
   ]
 }
