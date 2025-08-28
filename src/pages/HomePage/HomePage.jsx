@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Header from '../../components/Header/Header';
 import TypeSelector from '../../components/TypeSelector/TypeSelector';
 import ObjectList from '../../components/ObjectList/ObjectList';
@@ -28,10 +28,10 @@ const HomePage = () => {
 
   return (
     <div className={styles.homePage}>
-      <Header />
+      <Header/>
       <main className={styles.main}>
         {!selectedType ? (
-          <TypeSelector onSelect={setSelectedType} />
+          <TypeSelector onSelect={setSelectedType} onSearch={''}/>
         ) : (
           <div className={styles.contentSection}>
             <button
@@ -45,7 +45,7 @@ const HomePage = () => {
               {selectedType === 'resorts' && 'Базы отдыха'}
               {selectedType === 'sanatoriums' && 'Санатории'}
             </h1>
-            <ObjectList objects={mockObjects[selectedType]} />
+            <ObjectList objects={mockObjects[selectedType]}/>
           </div>
         )}
       </main>

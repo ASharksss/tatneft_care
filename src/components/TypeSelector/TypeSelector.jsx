@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './TypeSelector.module.css';
+import SearchBar from "../SearchBar/SearchBar";
+import SearchPage from "../../pages/SearchPage/SearchPage";
 
 const objectTypes = [
   {
@@ -39,13 +41,47 @@ const objectTypes = [
   }
 ];
 
-const   TypeSelector = ({ onSelect }) => {
+const TypeSelector = ({ onSelect, onSearch }) => {
+  const [currentView, setCurrentView] = useState('categories');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchFocus = () => {
+    setCurrentView('search');
+  };
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+    if (onSearch) onSearch(query);
+  };
+
+  const handleBackToCategories = () => {
+    setCurrentView('categories');
+    setSearchQuery('');
+  };
+
+  if (currentView === 'search') {
+    return (
+      <SearchPage
+        searchQuery={searchQuery}
+        onSearch={handleSearch}
+        onBack={handleBackToCategories}
+        searchResults={[]}
+      />
+    );
+  }
+
   return (
     <div className={styles.selector}>
       <div className={styles.hero}>
         <h1 className={styles.heroTitle}>Забота о вашем отдыхе начинается здесь</h1>
         <p className={styles.heroSubtitle}>Выберите тип объекта для просмотра доступных вариантов</p>
       </div>
+
+      <SearchBar
+        onSearch={handleSearch}
+        onFocus={handleSearchFocus}
+        compact={false}
+      />
 
       <div className={styles.typesGrid}>
         {objectTypes.map((type) => (

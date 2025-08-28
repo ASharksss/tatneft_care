@@ -1,55 +1,63 @@
+/* TypeSelector.module.css */
+
+/* Основные стили контейнера */
 .selector {
-    margin: 1.5rem 0;
-    text-align: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    animation: fadeInUp 0.4s ease;
 }
 
+/* Герой-секция */
 .hero {
-    margin-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
     padding: 0 0.5rem;
 }
 
 .heroTitle {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
     font-weight: 800;
-    margin: 0 0 0.75rem 0;
-    background: linear-gradient(135deg, var(--text-color) 0%, var(--secondary-text) 100%);
-    -webkit-background-clip: text;
+    color: var(--text-color);
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+    background: linear-gradient(135deg, var(--text-color) 0, var(--secondary-text) 100%);    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    line-height: 1.2;
 }
 
 .heroSubtitle {
-    font-size: 1rem;
+    font-size: 1.125rem;
     color: var(--secondary-text);
     margin: 0;
-    font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Сетка типов объектов */
 .typesGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
     padding: 0 0.5rem;
-    max-width: 1000px;
-    margin: 0 auto;
+    margin-top: 2.5rem;
 }
 
+/* Карточка типа */
 .typeCard {
     background: var(--card-bg);
     border-radius: 16px;
-    padding: 1.25rem 1rem;
+    padding: 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
     backdrop-filter: blur(10px);
-    min-height: 140px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
 }
 
 .typeCard::before {
@@ -58,77 +66,75 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
+    height: 4px;
     background: linear-gradient(90deg, var(--card-color), color-mix(in srgb, var(--card-color), transparent 70%));
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 .typeCard:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: color-mix(in srgb, var(--card-color), transparent 70%);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--card-color, var(--accent-color));
 }
 
 .typeCard:hover::before {
     transform: scaleX(1);
 }
 
+/* Содержимое карточки */
 .cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     z-index: 2;
-    width: 100%;
-    text-align: center;
 }
 
 .iconWrapper {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 0.75rem;
-    background: linear-gradient(135deg, var(--card-color), color-mix(in srgb, var(--card-color), transparent 30%));
-    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--card-color, var(--accent-color)) 0%, rgba(66, 153, 225, 0.1) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1.25rem;
     transition: all 0.3s ease;
 }
 
-.typeCard:hover .iconWrapper {
-    transform: scale(1.1);
-}
+
 
 .icon {
-    font-size: 1.5rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    font-size: 2rem;
+    line-height: 1;
 }
 
 .cardTitle {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 0.25rem 0;
+    font-size: 1.375rem;
+    font-weight: 700;
     color: var(--text-color);
-    line-height: 1.2;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.3;
 }
 
 .cardDescription {
     color: var(--secondary-text);
-    margin: 0;
-    font-size: 0.75rem;
-    line-height: 1.3;
-    display: none; /* Скрываем описание на мобильных */
+    margin: 0 0 1.5rem 0;
+    line-height: 1.5;
+    font-size: 0.9375rem;
+    text-align: center;
 }
 
+/* Эффект при наведении */
 .cardHover {
-    opacity: 0;
-    transform: translateY(5px);
-    transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.3rem;
-    color: var(--card-color);
-    font-weight: 600;
-    font-size: 0.8rem;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
 }
 
 .typeCard:hover .cardHover {
@@ -137,105 +143,328 @@
 }
 
 .hoverText {
-    font-size: 0.75rem;
+    color: var(--card-color);
+    font-weight: 600;
+    font-size: 0.9375rem;
 }
 
 .arrow {
-    font-size: 0.9rem;
-    transition: transform 0.2s ease;
+    color: var(--accent-color);
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
 }
 
 .typeCard:hover .arrow {
-    transform: translateX(2px);
+    transform: translateX(4px);
 }
 
-/* Десктопная версия */
-@media (min-width: 769px) {
+/* Стили для поиска */
+.searchContainer {
+    margin: 2rem 0;
+    padding: 0 0.5rem;
+}
+
+.searchForm {
+    display: flex;
+    gap: 0.75rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.searchWrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1.5px solid var(--border-color);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.searchWrapper:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+    transform: translateY(-2px);
+}
+
+.searchIcon {
+    position: absolute;
+    left: 1rem;
+    color: var(--secondary-text);
+    z-index: 1;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    border-radius: 16px;
+}
+
+.searchInput::placeholder {
+    color: var(--secondary-text);
+}
+
+.clearButton {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--secondary-text);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.clearButton:hover {
+    color: var(--text-color);
+    background-color: var(--hover-bg);
+}
+
+.searchButton {
+    padding: 0 1.5rem;
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: var(--shadow-md);
+}
+
+.searchButton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Стили для результатов поиска */
+.searchResults {
+    animation: fadeInUp 0.4s ease;
+}
+
+.resultsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.resultsTitle {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.backToTypes {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--accent-color);
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.backToTypes:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--accent-color);
+    transform: translateX(-4px);
+}
+
+.resultsContent {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultsPlaceholder {
+    text-align: center;
+    color: var(--secondary-text);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.selectorExiting {
+    animation: fadeOutDown 0.3s ease forwards;
+}
+
+/* Контейнер для перехода */
+.transitionContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.transitionOverlay {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--border-color);
+    border-top: 3px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
     .selector {
-        margin: 3rem 0;
+        padding: 0.75rem;
+    }
+
+    .hero {
+        margin-bottom: 2rem;
     }
 
     .heroTitle {
-        font-size: 2.8rem;
-        margin-bottom: 1rem;
+        font-size: 1.75rem;
     }
 
     .heroSubtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .typesGrid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        padding: 0 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        padding: 0;
     }
 
     .typeCard {
-        padding: 2.5rem 2rem;
-        min-height: 220px;
-        border-radius: 20px;
-        border: 1px solid transparent;
+        padding: 1.25rem;
+        border-radius: 14px;
     }
 
     .iconWrapper {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 1.5rem;
+        width: 56px;
+        height: 56px;
+        margin-bottom: 1rem;
     }
 
     .icon {
-        font-size: 2.5rem;
+        font-size: 1.75rem;
     }
 
     .cardTitle {
-        font-size: 1.4rem;
-        margin-bottom: 0.75rem;
+        font-size: 1.25rem;
     }
 
     .cardDescription {
-        display: block;
-        font-size: 0.95rem;
+        font-size: 0.875rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .searchContainer {
+        margin: 1.5rem 0;
+    }
+
+    .searchForm {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .searchInput {
+        padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+        font-size: 0.9375rem;
+    }
+
+    .searchIcon {
+        left: 0.875rem;
+        width: 18px;
+        height: 18px;
+    }
+
+    .clearButton {
+        right: 0.875rem;
+    }
+
+    .searchButton {
+        padding: 0.875rem;
+        width: 100%;
+    }
+
+    .resultsHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
         margin-bottom: 1.5rem;
     }
 
-    .cardHover {
-        font-size: inherit;
+    .resultsTitle {
+        font-size: 1.3rem;
     }
 
-    .hoverText {
-        font-size: 0.9rem;
-    }
-}
-
-/* Планшеты */
-@media (max-width: 768px) and (min-width: 481px) {
-    .typesGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-
-    .typeCard {
-        min-height: 130px;
-        padding: 1.5rem 1rem;
-    }
-
-    .iconWrapper {
-        width: 45px;
-        height: 45px;
-        margin-bottom: 0.5rem;
-    }
-
-    .icon {
-        font-size: 1.4rem;
-    }
-
-    .cardTitle {
-        font-size: 0.95rem;
+    .backToTypes {
+        align-self: flex-start;
     }
 }
 
-/* Мобильные телефоны */
 @media (max-width: 480px) {
+    .selector {
+        padding: 0.5rem;
+    }
+    .typesGrid {
+        grid-template-columns:  1fr;
+    }
+
     .hero {
         margin-bottom: 1.5rem;
     }
@@ -248,106 +477,109 @@
         font-size: 0.9rem;
     }
 
-    .typesGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
-        padding: 0.5rem;
-    }
-
     .typeCard {
-        padding: 1rem 0.75rem;
-        min-height: 120px;
-        border-radius: 14px;
-    }
-
-    .iconWrapper {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 0.5rem;
-    }
-
-    .icon {
-        font-size: 1.2rem;
-    }
-
-    .cardTitle {
-        font-size: 0.9rem;
-        font-weight: 600;
-    }
-}
-
-/* Очень маленькие экраны */
-@media (max-width: 360px) {
-    .typesGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.6rem;
-    }
-
-    .typeCard {
-        padding: 0.875rem 0.5rem;
-        min-height: 110px;
+        padding: 1rem;
         border-radius: 12px;
     }
 
     .iconWrapper {
-        width: 35px;
-        height: 35px;
-        margin-bottom: 0.4rem;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0.875rem;
     }
 
     .icon {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
 
     .cardTitle {
-        font-size: 0.8rem;
-    }
-}
-
-/* Ландшафтная ориентация */
-@media (max-height: 500px) and (orientation: landscape) {
-    .selector {
-        margin: 1rem 0;
+        font-size: 1.125rem;
     }
 
-    .hero {
+    .cardDescription {
+        font-size: 0.8125rem;
         margin-bottom: 1rem;
-        display: none; /* Скрываем герой-секцию в ландшафте */
     }
 
-    .typesGrid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.8rem;
+    .searchContainer {
+        margin: 1.25rem 0;
     }
 
+    .searchInput {
+        padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+        font-size: 0.875rem;
+    }
+
+    .searchIcon {
+        left: 0.75rem;
+        width: 16px;
+        height: 16px;
+    }
+
+    .clearButton {
+        right: 0.75rem;
+    }
+
+    .resultsTitle {
+        font-size: 1.2rem;
+    }
+
+    .resultsPlaceholder {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+
+    .transitionOverlay {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Темная тема адаптации */
+[data-theme="dark"] .typeCard {
+    background: rgba(30, 30, 30, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .searchWrapper {
+    background: rgba(30, 30, 30, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .backToTypes {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Улучшения для Safari */
+@supports (-webkit-touch-callout: none) {
     .typeCard {
-        min-height: 100px;
-        padding: 0.875rem;
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .searchWrapper {
+        -webkit-backdrop-filter: blur(10px);
     }
 }
 
-/* Улучшение для touch-устройств */
-@media (hover: none) {
-    .typeCard:active {
-        transform: scale(0.97);
-        background-color: var(--hover-bg);
-    }
-
-    .cardHover {
-        display: none; /* Скрываем hover-эффекты на touch устройствах */
-    }
-}
-
-/* Поддержка reduced-motion */
+/* Поддержка prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
     .typeCard,
+    .typeCard:hover,
     .iconWrapper,
     .cardHover,
-    .arrow {
+    .arrow,
+    .searchWrapper,
+    .searchButton,
+    .backToTypes {
         transition: none;
+        animation: none;
     }
 
     .typeCard:hover {
         transform: none;
+    }
+
+    .selector {
+        animation: none;
     }
 }
