@@ -1,49 +1,55 @@
 .selector {
-    margin: 3rem 0;
+    margin: 1.5rem 0;
     text-align: center;
 }
 
 .hero {
-    margin-bottom: 4rem;
-    padding: 0 1rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
 }
 
 .heroTitle {
-    font-size: 2.8rem;
+    font-size: 1.8rem;
     font-weight: 800;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.75rem 0;
     background: linear-gradient(135deg, var(--text-color) 0%, var(--secondary-text) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1.2;
 }
 
 .heroSubtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--secondary-text);
     margin: 0;
     font-weight: 400;
+    line-height: 1.4;
 }
 
 .typesGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 0 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 0 0.5rem;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .typeCard {
     background: var(--card-bg);
-    border-radius: 20px;
-    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    padding: 1.25rem 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: 1px solid transparent;
+    border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .typeCard::before {
@@ -52,15 +58,15 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: linear-gradient(90deg, var(--card-color), color-mix(in srgb, var(--card-color), transparent 70%));
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 .typeCard:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
     border-color: color-mix(in srgb, var(--card-color), transparent 70%);
 }
 
@@ -71,12 +77,14 @@
 .cardContent {
     position: relative;
     z-index: 2;
+    width: 100%;
+    text-align: center;
 }
 
 .iconWrapper {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 0.75rem;
     background: linear-gradient(135deg, var(--card-color), color-mix(in srgb, var(--card-color), transparent 30%));
     border-radius: 50%;
     display: flex;
@@ -90,34 +98,37 @@
 }
 
 .icon {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .cardTitle {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0 0 0.75rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
     color: var(--text-color);
+    line-height: 1.2;
 }
 
 .cardDescription {
     color: var(--secondary-text);
-    margin: 0 0 1.5rem 0;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    display: none; /* Скрываем описание на мобильных */
 }
 
 .cardHover {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(5px);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
     color: var(--card-color);
     font-weight: 600;
+    font-size: 0.8rem;
 }
 
 .typeCard:hover .cardHover {
@@ -126,49 +137,217 @@
 }
 
 .hoverText {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
 }
 
 .arrow {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     transition: transform 0.2s ease;
 }
 
 .typeCard:hover .arrow {
-    transform: translateX(4px);
+    transform: translateX(2px);
 }
 
-@media (max-width: 768px) {
+/* Десктопная версия */
+@media (min-width: 769px) {
+    .selector {
+        margin: 3rem 0;
+    }
+
     .heroTitle {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
     }
 
     .heroSubtitle {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .typesGrid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 0 1rem;
     }
 
     .typeCard {
-        padding: 2rem 1.5rem;
+        padding: 2.5rem 2rem;
+        min-height: 220px;
+        border-radius: 20px;
+        border: 1px solid transparent;
     }
 
     .iconWrapper {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 1.25rem;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1.5rem;
+    }
+
+    .icon {
+        font-size: 2.5rem;
+    }
+
+    .cardTitle {
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .cardDescription {
+        display: block;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cardHover {
+        font-size: inherit;
+    }
+
+    .hoverText {
+        font-size: 0.9rem;
     }
 }
 
+/* Планшеты */
+@media (max-width: 768px) and (min-width: 481px) {
+    .typesGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .typeCard {
+        min-height: 130px;
+        padding: 1.5rem 1rem;
+    }
+
+    .iconWrapper {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 0.5rem;
+    }
+
+    .icon {
+        font-size: 1.4rem;
+    }
+
+    .cardTitle {
+        font-size: 0.95rem;
+    }
+}
+
+/* Мобильные телефоны */
 @media (max-width: 480px) {
+    .hero {
+        margin-bottom: 1.5rem;
+    }
+
     .heroTitle {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+    }
+
+    .heroSubtitle {
+        font-size: 0.9rem;
+    }
+
+    .typesGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        padding: 0.5rem;
+    }
+
+    .typeCard {
+        padding: 1rem 0.75rem;
+        min-height: 120px;
+        border-radius: 14px;
+    }
+
+    .iconWrapper {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.5rem;
+    }
+
+    .icon {
+        font-size: 1.2rem;
+    }
+
+    .cardTitle {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 360px) {
+    .typesGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+
+    .typeCard {
+        padding: 0.875rem 0.5rem;
+        min-height: 110px;
+        border-radius: 12px;
+    }
+
+    .iconWrapper {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 0.4rem;
+    }
+
+    .icon {
+        font-size: 1.1rem;
+    }
+
+    .cardTitle {
+        font-size: 0.8rem;
+    }
+}
+
+/* Ландшафтная ориентация */
+@media (max-height: 500px) and (orientation: landscape) {
+    .selector {
+        margin: 1rem 0;
     }
 
     .hero {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
+        display: none; /* Скрываем герой-секцию в ландшафте */
+    }
+
+    .typesGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+
+    .typeCard {
+        min-height: 100px;
+        padding: 0.875rem;
+    }
+}
+
+/* Улучшение для touch-устройств */
+@media (hover: none) {
+    .typeCard:active {
+        transform: scale(0.97);
+        background-color: var(--hover-bg);
+    }
+
+    .cardHover {
+        display: none; /* Скрываем hover-эффекты на touch устройствах */
+    }
+}
+
+/* Поддержка reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .typeCard,
+    .iconWrapper,
+    .cardHover,
+    .arrow {
+        transition: none;
+    }
+
+    .typeCard:hover {
+        transform: none;
     }
 }
