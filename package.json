@@ -5,6 +5,7 @@
   "homepage": "https://asharksss.github.io/tatneft_care",
   "dependencies": {
     "@fancyapps/ui": "^5.0.28",
+    "@telegram-apps/sdk-react": "^2.0.25",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",

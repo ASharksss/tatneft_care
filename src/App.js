@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import ObjectPage from './pages/ObjectPage/ObjectPage';
 import { ThemeProvider } from './hooks/useTheme';
 import './assets/styles/global.css';
+import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 
 function App() {
   return (
